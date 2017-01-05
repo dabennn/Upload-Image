@@ -2,7 +2,7 @@
 
 	let _files = {},
 			_sizes = [],
-			_ext = ['jpg','jpeg','gif','png','ico','dwg','bmp'];
+			_exts = ['jpg','jpeg','gif','png','ico','dwg','bmp'];
 
 	function Upload(el,options){
 		that = this;
@@ -19,6 +19,9 @@
 		this.getSizes = function(){
 			return _sizes;
 		}
+		this.getExtensions = function(){
+			return _exts;
+		}
 		this.clearFiles = function(){
 			_files = {};
 			_sizes = [];
@@ -28,6 +31,16 @@
 				aImg[0].parentNode.removeChild(aImg[0]);
 			}
 			return _files;
+		}
+		this.addExtensions = function(exts){
+			if(exts && exts.length != 0){
+				for(let i=0;i<exts.length;i++){
+					let ext = exts[i].toLowerCase();
+					if(_exts.indexOf(ext) === -1){
+						_exts.push(ext);
+					}
+				}
+			}
 		}
 	}
 
@@ -51,8 +64,8 @@
 					for(let i=0;i<files.length;i++){
 						let name = files[i].name,
 								index = name.indexOf('.'),
-								ext = name.substring(index+1);
-						if(_ext.indexOf(ext) === -1){
+								ext = name.substring(index+1).toLowerCase();
+						if(_exts.indexOf(ext) === -1){
 							alert('请使用正确的图片格式');
 							return;
 						}
@@ -105,8 +118,8 @@
 					for(let i=0;i<files.length;i++){
 						let name = files[i].name,
 								index = name.indexOf('.'),
-								ext = name.substring(index+1);
-						if(_ext.indexOf(ext) === -1){
+								ext = name.substring(index+1).toLowerCase();
+						if(_exts.indexOf(ext) === -1){
 							alert('请使用正确的图片格式');
 							return;
 						}
