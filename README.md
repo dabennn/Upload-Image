@@ -35,6 +35,8 @@ Method List:
 - `getFiles`：获取文件列表对象，里面包含了所有显示的图片，可用于构建FormData</br>
 - `clearFiles`：清空文件列表对象，并清除所有显示的图片</br>
 - `getSizes`：获取保存图片大小的数组
+- `getExtensions`：获取拓展名数组（当前`['jpg','jpeg','gif','png','ico','dwg','bmp']`）
+- `addExtensions`：添加拓展名数组，以['abc']形式添加图片文件的拓展名，所有拓展名会转换为小写
 
 ### 其他
 - 初始化Upload时，会自动创建一个id为`file_btn`的file按钮，如果你不希望看到这个丑丑的按钮，你可以将`file_btn`的`display`设为`none`，并设置box的onclick事件，在该事件中模拟点击按钮
