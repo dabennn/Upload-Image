@@ -1,7 +1,6 @@
 # Upload-Image
 Upload Image Plugin by Javascript</br>可预览图片、多张上传、拖拽上传
 ### 立即使用
----
 ```html
 <body>
 	<form action="#">
