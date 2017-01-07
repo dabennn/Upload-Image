@@ -1,6 +1,7 @@
 (function(){
-
-	let _files = {},
+	"use strict"
+	let that,
+			_files = {},
 			_sizes = [],
 			_exts = ['jpg','jpeg','gif','png','ico','dwg','bmp'];
 
