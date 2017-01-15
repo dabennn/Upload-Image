@@ -7,11 +7,15 @@
 
 	function Upload(el,options){
 		that = this;
+		let opts = Object.assign({
+			multiple:false,
+			max:1,
+			size:'1MB'
+		},options);
 		that.el = el;
-		let opts = arguments[1] ? options : {multiple:false,max:1,size:'1MB'};
-		that.multiple = opts.multiple ? opts.multiple : false;
-		that.max = opts.max ? opts.max : 1;
-		that.size = opts.size ? opts.size : '1MB';
+		that.multiple = opts.multiple;
+		that.max = opts.max;
+		that.size = opts.size;
 		that._createFileInput();
 		that._addListener(el);
 		this.getFiles = function(){
